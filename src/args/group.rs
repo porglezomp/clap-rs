@@ -153,7 +153,7 @@ impl<'a> ArgGroup<'a> {
     /// ```
     /// [argument]: ./struct.Arg.html
     pub fn arg(mut self, n: &'a str) -> Self {
-        assert!(self.name != n,
+        assert_ne!(self.name, n,
                 "ArgGroup '{}' can not have same name as arg inside it",
                 &*self.name);
         self.args.push(n);
